@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Bus</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>Arrêt</ion-label>
+      <ion-select [(ngModel)]="station" (ionChange)="getSchedules()">
+        <ion-option *ngFor="let station of stations" [value]="station">
+          {{station.name}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Ligne</ion-label>
+      <ion-select [(ngModel)]="line" (ionChange)="lineChange()">
+        <ion-option *ngFor="let line of station.lines" [value]="line">
+          {{line.number}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Sens</ion-label>
+      <ion-select [(ngModel)]="direction" (ionChange)="updateSchedules()">
+        <ion-option *ngFor="let direction of line.directions" [value]="direction">
+          {{direction}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-row justify-content-center>
+    <ion-spinner *ngIf="loading"></ion-spinner>
+  </ion-row>
+
+  <ion-list>
+    <ion-item *ngFor="let schedule of schedules" text-center>
+      {{schedule}}
+    </ion-item>
+  </ion-list>
+</ion-content>
