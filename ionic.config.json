@@ -1,15 +1,5 @@
 {
   "name": "imta-app",
   "app_id": "",
-  "type": "ionic-angular",
-  "proxies": [
-    {
-      "path": "/tan",
-      "proxyUrl": "http://open.tan.fr"
-    },
-    {
-      "path": "/server",
-      "proxyUrl": "http://localhost:3000"
-    }
-  ]
+  "type": "ionic-angular"
 }

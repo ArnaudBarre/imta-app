@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class EventsService {
+  SERVER_URL = 'https://imta-app-server.herokuapp.com/';
 
   constructor(private http: Http) {
   }
@@ -13,14 +14,15 @@ export class EventsService {
   getEvents(subscriptions: Array<string>): Promise<Array<Event>> {
     let params = new URLSearchParams();
     subscriptions.forEach(sub => params.append('sub', sub));
-    return this.http.get('/server/events', {params: params}).map(res => res.json()).toPromise();
+    return this.http.get(this.SERVER_URL + 'events', {params: params}).map(res => res.json()).toPromise();
   }
 
   getAssociations(): Promise<Array<string>> {
-    return this.http.get('/server/events/associations').map(res => res.json()).toPromise();
+    return this.http.get(this.SERVER_URL + 'events/associations').map(res => res.json()).toPromise();
   }
 
   createEvent(event: Event, password: string): Promise<any> {
-    return this.http.post('/server/events', {event: event, password: password}).map(res => res.json()).toPromise();
+    return this.http.post(this.SERVER_URL + 'events', {event: event, password: password})
+      .map(res => res.json()).toPromise();
   }
 }

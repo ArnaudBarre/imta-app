@@ -40,7 +40,7 @@ export class BusPage implements OnInit {
   }
 
   getSchedules(): void {
-    this.http.get('tan/ewp/tempsattente.json/' + this.station.id)
+    this.http.get('http://open.tan.fr/ewp/tempsattente.json/' + this.station.id)
       .toPromise()
       .then(response => {
         this.loading = false;
