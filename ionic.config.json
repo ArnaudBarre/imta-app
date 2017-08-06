@@ -6,6 +6,10 @@
     {
       "path": "/tan",
       "proxyUrl": "http://open.tan.fr"
+    },
+    {
+      "path": "/server",
+      "proxyUrl": "http://localhost:3000"
     }
   ]
 }

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Créer un évènement</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Association</ion-label>
+    <ion-select interface="popover" [(ngModel)]="event.association">
+      <ion-option *ngFor="let association of associations">{{association}}</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" stacked>Mot de passe</ion-label>
+    <ion-input [(ngModel)]="password" type="password" clearInput></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" stacked>Nom de l'évènement</ion-label>
+    <ion-input [(ngModel)]="event.name" clearInput></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Début</ion-label>
+    <ion-datetime displayFormat="D MMM HH:mm" [(ngModel)]="event.dateStart"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>Fin</ion-label>
+    <ion-datetime displayFormat="D MMM HH:mm" [(ngModel)]="event.dateEnd"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" stacked>Description</ion-label>
+    <ion-textarea [(ngModel)]="event.description" clearInput></ion-textarea>
+  </ion-item>
+  <ion-row justify-content-center padding>
+    <button ion-button [disabled]="!(event.association && password && event.name)" (click)="submit()">Créer</button>
+  </ion-row>
+  <spinner [loading]="loading"></spinner>
+</ion-content>

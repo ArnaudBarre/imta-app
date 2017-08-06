@@ -4,6 +4,7 @@ import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 
 import {BusPage} from '../pages/bus/bus';
+import {EventsPage} from '../pages/events/events';
 
 @Component({
   templateUrl: 'app.html'
@@ -11,6 +12,7 @@ import {BusPage} from '../pages/bus/bus';
 export class App {
   @ViewChild(Nav) nav: Nav;
   pages: Array<{ title: string, icon: string, component: any }> = [
+    {title: 'Évènements', icon: 'calendar', component: EventsPage},
     {title: 'Bus', icon: 'bus', component: BusPage}
   ];
   rootPage = this.pages[0].component;

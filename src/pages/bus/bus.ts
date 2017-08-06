@@ -1,16 +1,17 @@
 import {Component, OnInit} from '@angular/core';
 import {Http} from '@angular/http';
-
+import {UtilsService} from '../../services/utils.service';
 import 'rxjs/add/operator/toPromise';
 
 @Component({
   selector: 'page-bus',
-  templateUrl: 'bus.html'
+  templateUrl: 'bus.html',
+  providers: [UtilsService]
 })
 export class BusPage implements OnInit {
   schedules = [];
   data = [];
-  stations = [
+  stations : Array<{id: string, name: string, lines: Array<{number: string, directions: Array<string>}>}>= [
     {
       id: 'CTRE',
       name: 'Chantrerie',
@@ -29,9 +30,9 @@ export class BusPage implements OnInit {
   station = this.stations[0];
   line = this.station.lines[0];
   direction = this.line.directions[0];
-  loading: boolean;
+  loading = true;
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private utilsService: UtilsService) {
   }
 
   ngOnInit(): void {
@@ -39,7 +40,6 @@ export class BusPage implements OnInit {
   }
 
   getSchedules(): void {
-    this.loading = true;
     this.http.get('tan/ewp/tempsattente.json/' + this.station.id)
       .toPromise()
       .then(response => {
@@ -50,7 +50,7 @@ export class BusPage implements OnInit {
       })
       .catch(error => {
         this.loading = false;
-        this.schedules.push('Error');
+        this.utilsService.toast();
         console.error(error);
       });
   }

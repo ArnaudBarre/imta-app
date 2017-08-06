@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Évènements</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openCreate()">
+        <ion-icon name="create"></ion-icon>
+      </button>
+      <button ion-button icon-only padding (click)="openSubscriptions()">
+        <ion-icon name="settings"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <spinner [loading]="loading"></spinner>
+
+  <ion-card *ngIf="!subscriptions.length">
+    <ion-card-header><b>Aucun abonnement !</b></ion-card-header>
+    <ion-card-content>Tu peux t'abonner à des associations dans les paramètres</ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="subscriptions.length && !loading && !httpError && !events.length">
+    <ion-card-header><b>Aucun Évènement !</b></ion-card-header>
+    <ion-card-content>Reviens bientôt :)</ion-card-content>
+  </ion-card>
+
+  <ion-card *ngFor="let event of events">
+    <ion-card-header>
+      <ion-row justify-content-between>
+        <h1>{{event.name}}</h1>
+        <h2>{{event.association}}</h2>
+      </ion-row>
+      {{event.dateStart | date:'d/M H:mm'}} - {{event.dateEnd| date:'d/M H:mm'}}
+    </ion-card-header>
+    <ion-card-content>
+      {{event.description}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
