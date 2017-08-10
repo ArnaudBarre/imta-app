@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{association.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-img style="contain: none" [src]="'assets/associations/' + association.name + '/cover.jpg'"></ion-img>
+  </ion-row>
+  <ion-row padding>{{association.description}}</ion-row>
+  <ion-item-group>
+    <ion-item-divider>Membres</ion-item-divider>
+    <ion-item *ngFor="let member of association.members">
+      <ion-avatar item-start>
+        <img [src]="'assets/associations/' + association.name + '/' + member.name.split(' ')[0].toLowerCase() + '.jpg'">
+      </ion-avatar>
+      <h2>{{member.name}}</h2>
+      <p>{{member.number}}</p>
+      <div item-end>{{member.position}}</div>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider>FAQ</ion-item-divider>
+    <ion-item *ngFor="let question of association.questions" text-wrap>
+      <ion-row>{{question.question}}</ion-row>
+      <p>{{question.response}}</p>
+    </ion-item>
+  </ion-item-group>
+</ion-content>

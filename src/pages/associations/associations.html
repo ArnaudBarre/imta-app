@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Les assos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-item-group *ngFor="let group of groups">
+    <ion-item-divider>{{group.name}}</ion-item-divider>
+    <ion-item *ngFor="let association of group.associations">
+      <ion-avatar item-start>
+        <img [src]="'assets/associations/' + association.name + '/avatar.jpg'">
+      </ion-avatar>
+      {{association.name}}
+      <button item-end ion-button icon-only clear (click)="goDetails(association)">
+        <ion-icon name="ios-arrow-forward"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-item-group>
+</ion-content>

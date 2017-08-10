@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Bureaux",
+    "associations": [
+      {
+        "name": "BDE",
+        "description": "S'occupe de l'intée, des soirées, tout ça tout ça",
+        "members": [
+          {
+            "name": "Alvin Arhab",
+            "position": "Prez",
+            "number": "0123456789"
+          },
+          {
+            "name": "Julien Dufour",
+            "position": "Vice Prez",
+            "number": "0123456789"
+          },
+          {
+            "name": "Alice Debosscher",
+            "position": "Vice Prez",
+            "number": "0123456789"
+          }
+        ],
+        "questions": [
+          {
+            "question": "Quands sont les perms ?",
+            "response": "Tous les midis de 12h45 à 13h30"
+          },
+          {
+            "question": "Es ce qu'onpeut acheter des timbres aux permanences ? ",
+            "response": "Oui, ils sont vendu à 70 centimes"
+          },
+          {
+            "question": "Es ce que des extés sont autorisés aux soiées ?",
+            "response": "En principe non, sauf si la description indique le contraire"
+          }
+        ]
+      },
+      {
+        "name": "BDS",
+        "description": "",
+        "members": []
+      },
+      {
+        "name": "BDA",
+        "description": "",
+        "members": []
+      }
+    ]
+  },
+  {
+    "name": "Clubs",
+    "associations": [
+      {
+        "name": "Robotique",
+        "description": "",
+        "members": []
+      }
+    ]
+  },
+  {
+    "name": "PES",
+    "associations": [
+      {
+        "name": "Voile",
+        "description": "",
+        "members": []
+      }
+    ]
+  }
+]

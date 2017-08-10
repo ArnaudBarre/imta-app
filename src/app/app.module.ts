@@ -12,6 +12,8 @@ import {EventsPage} from '../pages/events/events';
 import {SubscriptionsPage} from '../pages/events/subscriptions/subscriptions';
 import {CreatePage} from '../pages/events/create/create';
 import {SpinnerComponent} from '../components/spinner/spinner';
+import {AssociationsPage} from '../pages/associations/associations';
+import {DetailsPage} from '../pages/associations/details/details';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import {SpinnerComponent} from '../components/spinner/spinner';
     EventsPage,
     SubscriptionsPage,
     CreatePage,
+    AssociationsPage,
+    DetailsPage,
     SpinnerComponent
   ],
   imports: [
@@ -32,6 +36,8 @@ import {SpinnerComponent} from '../components/spinner/spinner';
   entryComponents: [
     App,
     BusPage,
+    AssociationsPage,
+    DetailsPage,
     EventsPage,
     SubscriptionsPage,
     CreatePage
