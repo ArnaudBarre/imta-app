@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Http} from '@angular/http';
 import {NavController} from 'ionic-angular';
 import {Association} from './association';
-import {DetailsPage} from './details/details';
+import {NewsPage} from './news/news';
 
 @Component({
   selector: 'page-associations',
@@ -18,7 +18,7 @@ export class AssociationsPage implements OnInit {
     this.http.get('./assets/data/associations.json').subscribe(response => this.groups = response.json());
   }
 
-  goDetails(association: Association) {
-    this.navCtrl.push(DetailsPage, {association: association});
+  goNews(association: Association) {
+    this.navCtrl.push(NewsPage, {association: association});
   }
 }

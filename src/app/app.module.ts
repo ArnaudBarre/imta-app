@@ -14,6 +14,7 @@ import {CreatePage} from '../pages/events/create/create';
 import {SpinnerComponent} from '../components/spinner/spinner';
 import {AssociationsPage} from '../pages/associations/associations';
 import {DetailsPage} from '../pages/associations/details/details';
+import {NewsPage} from '../pages/associations/news/news';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {DetailsPage} from '../pages/associations/details/details';
     CreatePage,
     AssociationsPage,
     DetailsPage,
+    NewsPage,
     SpinnerComponent
   ],
   imports: [
@@ -40,6 +42,7 @@ import {DetailsPage} from '../pages/associations/details/details';
     DetailsPage,
     EventsPage,
     SubscriptionsPage,
+    NewsPage,
     CreatePage
   ],
   providers: [

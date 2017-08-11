@@ -5,4 +5,5 @@ export class Association {
   description: string;
   members: Array<Member>;
   questions: Array<{ question: string, response: string }>;
+  news: Array<{ id: number, title: string, content: string, picture: boolean, date: string }>;
 }

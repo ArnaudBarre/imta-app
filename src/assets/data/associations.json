@@ -35,6 +35,22 @@
             "question": "Es ce que des extés sont autorisés aux soiées ?",
             "response": "En principe non, sauf si la description indique le contraire"
           }
+        ],
+        "news": [
+          {
+            "id":1,
+            "title":"WEEEEEIIII",
+            "content":"En raison du nombre important d'inscrit au WEI cette année on aurait besoin d'une simulation assez réaliste ! :D<br />Voici la liste des inscrit, tenez nous au courant en commentaire ou msg privé (à Appoline Mines'Victus Chariot ;) ) si vous ne voulez plus venir ou si vous n'êtes toujours pas inscrit !<br />Le paiement sera à effectuer à la rentrée (même ordre d'idée que l'année dernière)<br />Gracias !",
+            "picture":true,
+            "date":"2017-07-31T16:33+02:00"
+          },
+          {
+            "id":2,
+            "title":"Electroshock Nantes - 7 Avril",
+            "content":"Virgin Radio Officiel Nantes et votre BDE ont le plaisir de faire gagner 10 (5x2) places aux étudiants d’IMT Atlantique - Campus de Nantes !<br />Pour participer à ce tirage au sort, likez, identifiez la personne avec qui vous aimeriez y aller et partagez ce post en public !<br />Le tirage au sort aura lieu le 31 Mars à 19h !",
+            "picture":true,
+            "date":"2017-03-24T08:51+02:00"
+          }
         ]
       },
       {
